@@ -32,7 +32,7 @@
       height: 400px;
       overflow: hidden;
       flex: 3;
-      background-image: url("image/aquarium.jpg");
+      background-image: url("hoca/image/aquarium.jpg");
       background-size: cover;
       background-position: center;
       filter: brightness(1);
@@ -364,7 +364,7 @@
         <img src="hoca/image/goldfish.png" alt="goldfish">
       </div>
       <div class="fish" id="crab" style="top: 350px; animation-name: crab; animation-duration: 40s;">
-        <img src="hoca/image/crab.png" alt="crab">
+        <img src="hoca/image/Crab.png" alt="crab">
       </div>
     </div>
     <div class="controller-wrapper">
@@ -430,7 +430,7 @@
         const bubbleInterval = setInterval(() => {
           if (!bubbleOn) { clearInterval(bubbleInterval); return; }
           const bubble = document.createElement("img");
-          bubble.src = "image/bubble.png";
+          bubble.src = "hoca/image/bubble.png";
           bubble.className = "bubble";
           bubble.style.left = Math.random() * 550 + "px";
           const size = Math.random() * 25 + 15;
