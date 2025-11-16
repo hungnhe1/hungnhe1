@@ -32,7 +32,7 @@
       height: 400px;
       overflow: hidden;
       flex: 3;
-      background-image: url("hoca/image/aquarium.jpg");
+      background-image: url("image/aquarium.jpg");
       background-size: cover;
       background-position: center;
       filter: brightness(1);
@@ -348,23 +348,23 @@
 <body>
   <div class="wrapper">
     <div id="aquarium">
-      <div class="seaweed" style="left: 30px;"><img src="hoca/image/seaweed.png" alt="seaweed"></div>
-      <div class="seaweed" style="left: 100px;"><img src="hoca/image/seaweed.png" alt="seaweed"></div>
-      <div class="seaweed" style="left: 500px;"><img src="hoca/image/seaweed.png" alt="seaweed"></div>
+      <div class="seaweed" style="left: 30px;"><img src="image/seaweed.png" alt="seaweed"></div>
+      <div class="seaweed" style="left: 100px;"><img src="image/seaweed.png" alt="seaweed"></div>
+      <div class="seaweed" style="left: 500px;"><img src="image/seaweed.png" alt="seaweed"></div>
       <div class="fish" id="shark" style="top: 200px; animation-name: shark; animation-duration: 20s;">
-        <img src="hoca/image/shark.png" alt="shark">
+        <img src="image/shark.png" alt="shark">
       </div>
       <div class="fish" id="turtle" style="top: 100px; animation-name: turtle; animation-duration: 30s;">
-        <img src="hoca/image/turtle.png" alt="turtle">
+        <img src="image/shark.png" alt="turtle">
       </div>
       <div class="fish" id="clownfish" style="top: 250px; animation-name: clownfish; animation-duration: 24s;">
-        <img src="hoca/image/clownfish.png" alt="clownfish">
+        <img src="image/clownfish.png" alt="clownfish">
       </div>
       <div class="fish" id="goldfish" style="top: 300px; animation-name: goldfish; animation-duration: 36s;">
-        <img src="hoca/image/goldfish.png" alt="goldfish">
+        <img src="image/goldfish.png" alt="goldfish">
       </div>
       <div class="fish" id="crab" style="top: 350px; animation-name: crab; animation-duration: 40s;">
-        <img src="hoca/image/Crab.png" alt="crab">
+        <img src="image/Crab.png" alt="crab">
       </div>
     </div>
     <div class="controller-wrapper">
@@ -382,7 +382,7 @@
       <div class="controller">
         <strong>Nothing's Gonna Change My Love For You</strong>
         <p><strong>George Benson</strong></p>
-        <audio src="hoca/music/George Benson - Nothing's Gonna Change My Love For You.mp3" controls></audio>
+        <audio src="music/George Benson - Nothing's Gonna Change My Love For You.mp3" controls></audio>
       </div>
 
     </div>
@@ -430,7 +430,7 @@
         const bubbleInterval = setInterval(() => {
           if (!bubbleOn) { clearInterval(bubbleInterval); return; }
           const bubble = document.createElement("img");
-          bubble.src = "hoca/image/bubble.png";
+          bubble.src = "image/bubble.png";
           bubble.className = "bubble";
           bubble.style.left = Math.random() * 550 + "px";
           const size = Math.random() * 25 + 15;
