@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cvcanhan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Profile</title>
+    <style>
+        .contact-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .contact-box {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .contact-box i {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+
+        .contact-box:hover {
+            transform: translateY(-8px) scale(1.05);
+            color: white;
+        }
+
+
+        .fb:hover {
+            background: #1877f2;
+        }
+
+        .discord:hover {
+            background: #5865F2;
+        }
+
+        .twitter:hover {
+            background: #1DA1F2;
+        }
+
+        .tiktok:hover {
+            background: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bgimg">
+        <img src="image/background1.jpg" alt="Header Image">
+        <div class="overlay"></div>
+        <h1>Welcome to my website</h1>
+    </header>
+
+    <ul id="navbar">
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="Career.html">Career</a></li>
+        <li><a href="Project.html">Project</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+    <h2 id="head">My Contact</h2>
+    <div class="contact-container">
+
+        <a href="https://facebook.com/hinhhuunghia" target="_blank" class="contact-box fb">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+
+        <a href="https://discord.gg/ZGz63sPH" target="_blank" class="contact-box discord">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+        </a>
+
+        <a href="https://x.com/hungnhe1" target="_blank" class="contact-box twitter">
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+        </a>
+
+        <a href="https://tiktok.com/@hng253738" target="_blank" class="contact-box tiktok">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+        </a>
+
+    </div>
+</body>
+
+</html>

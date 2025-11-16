@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aquarium</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      background: linear-gradient(whitesmoke, blue);
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #aquarium {
+      position: relative;
+      background-color: aqua;
+      border: 2px solid black;
+      border-radius: 5px;
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      flex: 3;
+      background-image: url("image/aquarium.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(1);
+      transition: filter 0.5s;
+    }
+
+    .fish {
+      position: absolute;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .fish img {
+      width: 100px;
+      height: auto;
+    }
+
+
+    @keyframes turtle {
+      0% {
+        left: 10px;
+        top: 80px;
+        transform: rotate(0deg) scaleX(1);
+      }
+
+      20% {
+        left: 200px;
+        top: 40px;
+        transform: rotate(15deg) scaleX(1);
+      }
+
+      40% {
+        left: 450px;
+        top: 120px;
+        transform: rotate(-5deg) scaleX(1);
+      }
+
+      60% {
+        left: 380px;
+        top: 300px;
+        transform: rotate(-20deg) scaleX(-1);
+      }
+
+      80% {
+        left: 100px;
+        top: 260px;
+        transform: rotate(10deg) scaleX(-1);
+      }
+
+      100% {
+        left: 10px;
+        top: 80px;
+        transform: rotate(0deg) scaleX(1);
+      }
+    }
+
+
+
+    @keyframes crab {
+      0% {
+        left: 0;
+        bottom: 5px;
+        transform: rotate(0deg) scaleX(1);
+      }
+
+      50% {
+        left: 800px;
+        bottom: 5px;
+        transform: rotate(-10deg) scaleX(1);
+      }
+
+      100% {
+        left: 0;
+        bottom: 5px;
+        transform: rotate(0deg) scaleX(1);
+      }
+    }
+
+    @keyframes shark {
+      0% {
+        left: -50px;
+        top: 100px;
+        transform: rotate(0deg) scaleX(1);
+      }
+
+      15% {
+        left: 300px;
+        top: 20px;
+        transform: rotate(10deg) scaleX(1);
+      }
+
+      35% {
+        left: 750px;
+        top: 140px;
+        transform: rotate(20deg) scaleX(1);
+      }
+
+      55% {
+        left: 650px;
+        top: 350px;
+        transform: rotate(-10deg) scaleX(-1);
+      }
+
+      75% {
+        left: 200px;
+        top: 300px;
+        transform: rotate(-20deg) scaleX(-1);
+      }
+
+      100% {
+        left: -50px;
+        top: 100px;
+        transform: rotate(0deg) scaleX(1);
+      }
+    }
+
+
+
+    @keyframes goldfish {
+      0% {
+        left: 0px;
+        top: 200px;
+        transform: rotate(0deg) scaleX(-1);
+      }
+
+      20% {
+        left: 250px;
+        top: 240px;
+        transform: rotate(15deg) scaleX(-1);
+      }
+
+      40% {
+        left: 600px;
+        top: 180px;
+        transform: rotate(-10deg) scaleX(-1);
+      }
+
+      60% {
+        left: 500px;
+        top: 320px;
+        transform: rotate(20deg) scaleX(1);
+      }
+
+      80% {
+        left: 100px;
+        top: 350px;
+        transform: rotate(-5deg) scaleX(1);
+      }
+
+      100% {
+        left: 0px;
+        top: 200px;
+        transform: rotate(0deg) scaleX(-1);
+      }
+    }
+
+
+
+    @keyframes clownfish {
+      0% {
+        left: 20px;
+        top: 60px;
+        transform: rotate(0deg) scaleX(-1);
+      }
+
+      25% {
+        left: 500px;
+        top: 80px;
+        transform: rotate(20deg) scaleX(-1);
+      }
+
+      50% {
+        left: 700px;
+        top: 200px;
+        transform: rotate(-5deg) scaleX(1);
+      }
+
+      75% {
+        left: 350px;
+        top: 330px;
+        transform: rotate(-15deg) scaleX(1);
+      }
+
+      100% {
+        left: 20px;
+        top: 60px;
+        transform: rotate(0deg) scaleX(-1);
+      }
+    }
+
+
+
+    .seaweed {
+      position: absolute;
+      bottom: 0;
+      animation: wave 3s ease-in-out infinite alternate;
+    }
+
+    .seaweed img {
+      width: 160px;
+      height: 150px;
+    }
+
+    @keyframes wave {
+      0% {
+        transform: rotate(-5deg) translateX(0px);
+      }
+
+      25% {
+        transform: rotate(3deg) translateX(2px);
+      }
+
+      50% {
+        transform: rotate(-3deg) translateX(-2px);
+      }
+
+      75% {
+        transform: rotate(4deg) translateX(1px);
+      }
+
+      100% {
+        transform: rotate(-5deg) translateX(0px);
+      }
+    }
+
+
+    .bubble {
+      position: absolute;
+      bottom: 0;
+      animation: rise 5s linear infinite;
+      opacity: 1;
+      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateY(-420px) scale(0.6);
+        opacity: 0;
+      }
+    }
+
+    .controller {
+      display: flex;
+      flex-direction: column;
+      background-color: antiquewhite;
+      padding: 15px;
+      border-radius: 10px;
+      margin-left: 20px;
+      gap: 15px;
+      height: fit-content;
+    }
+
+    .controller-wrapper {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: fit-content;
+    }
+
+    .button {
+      background-color: burlywood;
+      padding: 12px 18px;
+      border: solid black 2px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: rgb(245, 209, 162);
+    }
+
+    .speed-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .music-player {
+      display: flex;
+      width: 350px;
+      padding: 20px;
+      border-radius: 15px;
+      background: antiquewhite;
+      color: rgb(0, 0, 0);
+      font-family: sans-serif;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .music-info h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .music-info p {
+      margin: 5px 0 15px;
+      opacity: 0.7;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="aquarium">
+      <div class="seaweed" style="left: 30px;"><img src="image/seaweed.png" alt="seaweed"></div>
+      <div class="seaweed" style="left: 100px;"><img src="image/seaweed.png" alt="seaweed"></div>
+      <div class="seaweed" style="left: 500px;"><img src="image/seaweed.png" alt="seaweed"></div>
+      <div class="fish" id="shark" style="top: 200px; animation-name: shark; animation-duration: 20s;">
+        <img src="image/shark.png" alt="shark">
+      </div>
+      <div class="fish" id="turtle" style="top: 100px; animation-name: turtle; animation-duration: 30s;">
+        <img src="image/turtle.png" alt="turtle">
+      </div>
+      <div class="fish" id="clownfish" style="top: 250px; animation-name: clownfish; animation-duration: 24s;">
+        <img src="image/clownfish.png" alt="clownfish">
+      </div>
+      <div class="fish" id="goldfish" style="top: 300px; animation-name: goldfish; animation-duration: 36s;">
+        <img src="image/goldfish.png" alt="goldfish">
+      </div>
+      <div class="fish" id="crab" style="top: 350px; animation-name: crab; animation-duration: 40s;">
+        <img src="image/crab.png" alt="crab">
+      </div>
+    </div>
+    <div class="controller-wrapper">
+
+      <div class="controller">
+        <button id="lightBtn" class="button">Light: ON</button>
+        <button id="bubbleBtn" class="button">Bubble</button>
+        <div class="speed-row">
+          <label for="speed">Speed</label>
+          <input id="speed" type="range" min="0.5" max="1.5" value="1" step="0.25">
+          <span id="speedValue" style="width:40px; text-align:center">1</span>x
+        </div>
+      </div>
+
+      <div class="controller">
+        <strong>Nothing's Gonna Change My Love For You</strong>
+        <p><strong>George Benson</strong></p>
+        <audio src="music/George Benson - Nothing's Gonna Change My Love For You.mp3" controls></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const aquarium = document.getElementById("aquarium");
+    const lightBtn = document.getElementById("lightBtn");
+    const bubbleBtn = document.getElementById("bubbleBtn");
+    const slider = document.getElementById("speed");
+    const label = document.getElementById("speedValue");
+    const fishes = document.querySelectorAll(".fish");
+
+    const baseDurations = {
+      shark: 20,
+      turtle: 35,
+      clownfish: 24,
+      goldfish: 36,
+      crab: 40
+    };
+
+    let lightOn = true;
+    lightBtn.onclick = () => {
+      lightOn = !lightOn;
+      aquarium.style.filter = lightOn ? "brightness(1)" : "brightness(0.5)";
+      lightBtn.textContent = lightOn ? "Light: ON" : "Light: OFF";
+    };
+
+    slider.addEventListener("input", function () {
+      const speed = parseFloat(this.value);
+      label.textContent = speed;
+      fishes.forEach(fish => {
+        const id = fish.id;
+        const base = baseDurations[id] || 20;
+        fish.style.animationDuration = (base / speed) + "s";
+      });
+    });
+
+    let bubbleOn = false;
+    bubbleBtn.onclick = () => {
+      bubbleOn = !bubbleOn;
+      bubbleBtn.textContent = bubbleOn ? "Bubble: ON" : "Bubble: OFF";
+
+      if (bubbleOn) {
+        const bubbleInterval = setInterval(() => {
+          if (!bubbleOn) { clearInterval(bubbleInterval); return; }
+          const bubble = document.createElement("img");
+          bubble.src = "image/bubble.png";
+          bubble.className = "bubble";
+          bubble.style.left = Math.random() * 550 + "px";
+          const size = Math.random() * 25 + 15;
+          bubble.style.width = size + "px";
+          bubble.style.animationDuration = (3 + Math.random() * 3) + "s";
+          aquarium.appendChild(bubble);
+          setTimeout(() => bubble.remove(), 5000);
+        }, 400);
+      }
+    };
+  </script>
+</body>
+
+</html>

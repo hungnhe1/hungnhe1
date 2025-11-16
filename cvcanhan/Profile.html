@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cvcanhan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Profile</title>
+    <style>
+        #profilebox {
+            background: #333;
+            min-width: 90%;
+            max-width: 90%;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            color: white;
+        }
+
+
+        #profileimage img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: block;
+            float: left;
+            margin: 0 auto 15px auto;
+            object-fit: cover;
+        }
+
+        #information {
+            display: block;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        #information p {
+            margin: 5px 0;
+        }
+
+        #aboutme {
+            margin-bottom: 15px;
+        }
+
+        #work {
+            margin-bottom: 15px;
+            display: block;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+        }
+
+        .work-item {
+            background: #222;
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 8px;
+        }
+
+        #skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-bar-inner {
+            height: 100%;
+            background: #4caf50;
+            width: 0;
+            transition: width 0.5s;
+        }
+
+        #profilebox:hover .skill-bar-inner {
+            width: var(--skill-width);
+        }
+
+        #contact {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            position: relative;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contact-icon span {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #555;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            transition: 0.25s ease;
+        }
+
+        .contact-icon:hover span {
+            opacity: 1;
+            bottom: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bgimg">
+        <img src="image/background1.jpg" alt="Header Image">
+        <div class="overlay"></div>
+        <h1>Welcome to my website</h1>
+    </header>
+
+    <ul id="navbar">
+        <li><a href="Profile.html">Profile</a></li>
+        <li><a href="Career.html">Career</a></li>
+        <li><a href="Project.html">Project</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+
+    <h2 id="head">My profile</h2>
+
+    <div id="profilebox">
+
+        <div id="information">
+            <div id="profileimage">
+                <img src="/cvcanhan/image/money.png" alt="Profile Image">
+            </div>
+            <p><strong>Họ tên:</strong> Đặng Quang Hưng</p>
+            <p><strong>Ngày sinh:</strong> 08/08/2007</p>
+            <p><strong>Quê quán:</strong> TP.HCM</p>
+            <p><strong>Số điện thoại:</strong> 0562133423</p>
+            <p><strong>Email:</strong> danghung159h@email.com</p>
+        </div>
+        <div id="aboutme">
+            <p><strong>Giới thiệu bản thân:</strong></p>
+            <p>Tôi là sinh viên năm nhất đại học, hiện đang theo học ngành Công nghệ Thông tin. Với niềm đam mê mạnh mẽ
+                đối với lĩnh vực An toàn thông tin, tôi luôn chủ động tìm hiểu về bảo mật hệ thống, mã hóa dữ liệu và
+                các phương thức phòng chống tấn công mạng.
+
+                Dù còn đang ở giai đoạn đầu của hành trình học tập, tôi không ngừng trau dồi kiến thức qua các khóa học
+                trực tuyến, tham gia cộng đồng an ninh mạng và thử sức với các bài tập CTF cơ bản. Tôi mong muốn trong
+                tương lai có thể trở thành một chuyên viên An toàn thông tin, góp phần xây dựng các hệ thống an toàn và
+                bảo mật cho doanh nghiệp.
+
+                Tôi là người ham học hỏi, có tinh thần kỷ luật và luôn cố gắng hoàn thiện kỹ năng từng ngày. Tôi tin
+                rằng với sự nỗ lực và định hướng đúng đắn, mình sẽ đạt được mục tiêu nghề nghiệp đã đặt ra.</p>
+        </div>
+        <div>
+            <p><strong>Công việc hiện tại:</strong></p>
+        </div>
+        <div id="work">
+            <div class="work-item">
+                <strong>Sinh viên năm 1</strong><br>Đại học Sư phạm TP.HCM
+            </div>
+            <div id="skill">
+                <div>
+                    <p><strong>Kỹ năng:</strong></p>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-inner" style="--skill-width: 90%; width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-inner" style="--skill-width: 80%; width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-inner" style="--skill-width: 75%; width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="Certificate">
+                <div>
+                    <p><strong>Chứng chỉ:</strong></p>
+                </div>
+                <ul>
+                    <li>Microsoft Office Specialist for Office Word 2016</li>
+                    <li>Microsoft Office Specialist for Office PowerPoint 2016</li>
+                    <li>Microsoft Office Specialist for Office Excel 2016</li>
+                </ul>
+            </div>
+            <div id="contact">
+                <a href="https://www.facebook.com/hinhhuunghia" class="contact-icon" target="_blank"><i
+                        class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                <a href="https://discord.gg/ZGz63sPH" class="contact-icon" target="_blank"><i
+                        class="fab fa-discord"></i><span>Discord</span></a>
+                <a href="https://x.com/hungnhe1" class="contact-icon" target="_blank"><i
+                        class="fab fa-twitter"></i><span>Twitter</span></a>
+                <a href="https://www.tiktok.com/@hng253738" class="contact-icon" target="_blank"><i
+                        class="fab fa-tiktok"></i><span>Tiktok</span></a>
+            </div>
+        </div>
+
+        <footer></footer>
+</body>
+
+</html>

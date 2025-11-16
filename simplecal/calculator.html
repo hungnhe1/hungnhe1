@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #alcal {
+            width: 500px;
+            height: 200px;
+            padding: 10px;
+            border: 5px solid black;
+            gap: 5px;
+        }
+
+        #head {
+            border: 2px solid black;
+            background-color: blueviolet;
+        }
+
+        #calculator {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #calculator input {
+            width: 100%;
+        }
+
+        #cal {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #cal button {
+            width: 100px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        #cal button:hover {
+            transform: scale(1.03);
+        }
+
+        #cal button:active {
+            background-color: rgb(43, 153, 116)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="alcal">
+        <div id="head">
+            <h2>Simple Calculator</h2>
+        </div>
+        <div id="calculator">
+            <input type="text" id="firstnum">
+            <input type="text" id="secnum">
+        </div>
+        <div id="cal">
+            <button id="+">+</button>
+            <button id="-">-</button>
+            <button id="*">x</button>
+            <button id="/">/</button>
+        </div>
+        <div id="result">
+            <h2 id="calresult"></h2>
+        </div>
+    </div>
+    <script>
+        // Lấy 2 ô input và vùng hiển thị kết quả
+        const firstNum = document.getElementById("firstnum");
+        const secNum = document.getElementById("secnum");
+        const result = document.getElementById("calresult");
+
+        // Lấy tất cả các nút operator
+        const buttons = document.querySelectorAll("#cal button");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                const a = parseFloat(firstNum.value);
+                const b = parseFloat(secNum.value);
+                const op = btn.id;   // + - * /
+
+                // Kiểm tra nhập liệu
+                if (isNaN(a) || isNaN(b)) {
+                    result.textContent = "Vui lòng nhập số!";
+                    return;
+                }
+
+                let res = 0;
+
+                switch (op) {
+                    case "+":
+                        res = a + b;
+                        break;
+                    case "-":
+                        res = a - b;
+                        break;
+                    case "*":
+                        res = a * b;
+                        break;
+                    case "/":
+                        res = b === 0 ? "Không thể chia cho 0" : a / b;
+                        break;
+                }
+
+                result.textContent = `Kết quả: ${res}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>
